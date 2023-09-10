@@ -30,3 +30,7 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+zipkin:
+  tracing:
+    endpoint: http://${ZIPKIN_HOST:localhost}:9411/api/v2/spans
