@@ -13,6 +13,9 @@ management:
     enabled: true
     sampling:
       probability: 1.0
+    zipkin:
+      tracing:
+        endpoint: http://${ZIPKIN_HOST:localhost}:9411/api/v2/spans
 info:
   env:
     enabled: true
@@ -31,7 +34,3 @@ spring:
     port: 5672
     username: guest
     password: guest
-
-zipkin:
-  tracing:
-    endpoint: http://${ZIPKIN_HOST:localhost}:9411/api/v2/spans
