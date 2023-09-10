@@ -31,6 +31,11 @@ spring:
           predicates:
             - Path=/catalogs/**
 
+        - id: ms-serie
+          uri: lb://serie-service
+          predicates:
+            - Path=/series/**
+
 eureka:
   client:
     service-url:
