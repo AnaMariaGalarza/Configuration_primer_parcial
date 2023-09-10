@@ -9,6 +9,9 @@ management:
       show-details: always
     shutdown:
       enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
 info:
   env:
     enabled: true
@@ -27,8 +30,3 @@ spring:
     port: 5672
     username: guest
     password: guest
-
-management:
-  tracing:
-    sampling:
-      probability: 1.0
