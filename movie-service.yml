@@ -3,7 +3,7 @@ spring:
     name: movie-service
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://${DB_HOST:localhost}:3306/movie-dev
+    uri: jdbc:mysql://${DB_HOST:localhost}:3306/movie-dev
     username: usr-movie
     password: pwd-movie
   jpa:
