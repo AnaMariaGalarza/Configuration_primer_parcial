@@ -24,17 +24,31 @@ spring:
           uri: lb://movie-service
           predicates:
             - Path=/movies/**
-
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: breaker-backend
+                fallbackUri: forward:/fallback
 
         - id: ms-catalog
           uri: lb://catalog-service
           predicates:
             - Path=/catalogs/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: breaker-backend
+                fallbackUri: forward:/fallback
 
         - id: ms-serie
           uri: lb://serie-service
           predicates:
             - Path=/series/**
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: breaker-backend
+                fallbackUri: forward:/fallback
 
 eureka:
   client:
